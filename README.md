@@ -5,7 +5,10 @@ Este projeto implementa Redis como cache à frente de um banco SQLite para otimi
 ## Arquitetura
 
 ```
-Cliente → Redis (Cache) → SQLite (Banco Principal)
+1. Cliente → Redis -> Dados / (Se não tiver dados) -> Passo 2.
+2. Cliente -> Banco -> Dados
+3. dados do banco -> Redis
+4. dados do Banco -> cliente 
 ```
 
 ## Como Funciona
